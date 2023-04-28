@@ -11,9 +11,11 @@ import java.io.IOException;
 public class ResponseHeaderServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //[status-line]
         response.setStatus(HttpServletResponse.SC_OK);
 
+        //[response-headers]
         response.setHeader("Content-Type", "text/plain");
-        response.setHeader("Cache-Control", "no-cacche, no-store,must-revalidate ");
+        response.setHeader("Cache-Control", "no-cache, no-store,must-revalidate ");
     }
 }
